@@ -18,8 +18,9 @@
             let txt7 = "10.1abc";
             console.log(txt + txt);
             console.log(txt[0]);
+            console.log(txt[-1]); // undefined
             console.log(txt[4] + txt[5] + txt[6]);
-            console.log(txt2); 
+            console.log(txt2);
             console.log(txt3);
             console.log(txt4);
             console.log(txt5);
@@ -34,7 +35,17 @@
             // console.dir(txt2);
 
             // 스트링에 메서드
-            console.log(txt.length);
+            console.log(txt.length); // 11개의 글자지만, index는 length - 1
+
+            // indexOf는 정규표현식을 허용하지 않습니다.
+            console.log(txt.indexOf("E"));
+            console.log(txt.search("E"));
+
+            console.log(txt.indexOf("Z"));
+            console.log(txt.search("Z"));
+
+            let regExp = /CD/;
+            console.log(txt.search(regExp));
         </script>
     </body>
 </html>

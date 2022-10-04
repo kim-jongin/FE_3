@@ -94,6 +94,34 @@
             const y = 1;
             console.log(!(x || y) === (!x && !y));
             console.log(!(x && y) === (!x || !y));
+
+            // 알고리즘 문제
+            // for (let i = 0; i < 100; i++) {
+            //     // console.log(i);
+            //     if (i % 3 == 0) {
+            //         console.log(i);
+            //     }
+            //     if (i % 5 == 0) {
+            //         console.log(i);
+            //     }
+            // }
+
+            // for (let i = 0; i < 100; i++) {
+            //     // console.log(i);
+            //     if (i % 3 == 0 && i % 5 == 0) {
+            //         console.log(i);
+            //     }
+            // }
+
+            let s = 0;
+            for (let i = 0; i < 100; i++) {
+                // console.log(i);
+                if (i % 3 == 0 || i % 5 == 0) {
+                    console.log(i);
+                    s += i;
+                }
+            }
+            console.log(s);
         </script>
     </body>
 </html>
