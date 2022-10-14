@@ -390,12 +390,6 @@
 // */
 
 
-
-
-
-
-
-
 // txt = 'hello world'
 // result = ''
 // for (const i of txt) {
@@ -404,9 +398,70 @@
 
 // console.log(result)
 
-// n               n <= 1      return
-// reverse(5)    5       false       5 * reverse(4) = 120
-// reverse(4)    4       false       4 * reverse(3) = 24
-// reverse(3)    3       false       3 * reverse(2) = 6
-// reverse(2)    2       false       2 * reverse(1) = 2
-// reverse(1)    1       true        1
+
+// // 지역변수와 전역변수
+
+// // 스코프에 대한 좋은 글
+// // https://velog.io/@bico/JavaScript-%EB%A0%89%EC%8B%9C%EC%BB%AC-%EC%8A%A4%EC%BD%94%ED%94%84lexical-scope
+
+// // 블록레벨스코프
+// if(true){ // for문이어도 마찬가지입니다.
+//     let x = 10;
+//     const y = 10;
+// }
+// console.log(x, y)
+
+// // 밖에 선언된 x는 함수 내부에서도 접근 가능합니다.
+// let x = 100
+// function xplus(){
+//     x = x + 10
+// }
+
+// xplus()
+// console.log(x)
+
+// // 함수가 종료된 다음에는 선언된 변수는 휘발됩니다.
+// function xplus(){
+//     let x = 100
+//     x = x + 10
+// }
+
+// xplus()
+// console.log(x)
+
+// // 함수 안에 함수
+// function a(){
+//     console.log('a 실행')
+//     function b(){
+//         console.log('b 실행')
+//     }
+//     b()
+// }
+
+// a()
+
+// // 화살표 함수
+// function 함수1(x, y) {
+//     return x + y
+// }
+
+// let 함수2 = (x, y) => x + y
+
+// 함수1.name
+// '함수1'
+// 함수2.name
+// '함수2'
+// console.dir(함수1)
+
+// function 함수1(x, y) {
+//     let z = x + y
+//     return z
+// }
+
+// let 함수2 = (x, y) => {
+//     let z = x + y
+//     return z
+// }
+
+// // 호이스팅이 다릅니다.
+// // -> 35번 파일로 이어집니다.
