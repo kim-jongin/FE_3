@@ -170,16 +170,44 @@
                 },
             ];
 
+            // step 1
+            // function ProductList() {
+            //     // 비동기 모듈
+            //     console.log(productData);
+            //     return (
+            //         <ul>
+            //             {[
+            //                 <ProductInfo item={productData[0]} />,
+            //                 <ProductInfo item={productData[1]} />,
+            //                 <ProductInfo item={productData[2]} />,
+            //                 <ProductInfo item={productData[3]} />,
+            //                 <ProductInfo item={productData[4]} />,
+            //                 <ProductInfo item={productData[5]} />,
+            //             ]}
+            //         </ul>
+            //     );
+            // }
+
+            // step 2
+            // function ProductList() {
+            //     // console.log(productData);
+            //     let result = [];
+            //     productData.forEach((i) => {
+            //         result.push(<ProductInfo item={i} key={i.id} />);
+            //     });
+            //     return <ul>{result}</ul>;
+            // }
+
+            // step 3
             function ProductList() {
-                console.log(productData);
+                // console.log(productData);
                 return (
                     <ul>
-                        <ProductInfo productData={productData[0]}/>
-                        <ProductInfo productData={productData[1]}/>
-                        <ProductInfo productData={productData[2]}/>
-                        <ProductInfo productData={productData[3]}/>
-                        <ProductInfo productData={productData[4]}/>
-                        <ProductInfo productData={productData[5]}/>
+                        {productData
+                            .filter((v) => v.price <= 10000)
+                            .map((i) => (
+                                <ProductInfo item={i} key={i.id} />
+                            ))}
                     </ul>
                 );
             }
@@ -198,10 +226,11 @@
                         />
                         <p>{props.item["productName"]}</p>
                         <p>하트</p>
-                        <p>{parseInt((props.item["price"] + 10000) * 0.2)}</p>
+                        <p>{props.item["price"]}</p>
                     </li>
                 );
             }
+
             function ShoppingCart() {
                 return <p>쇼핑카드</p>;
             }

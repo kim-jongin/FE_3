@@ -1,0 +1,26 @@
+import {useState, useMemo} from 'react'
+
+function 부하(){
+  let s = 0
+  for (let i = 0; i < 1000000000; i++) {
+    s += i
+  }
+  return s
+}
+
+function App() {
+const [count, setCount] = useState(0)
+let result = useMemo(() => {})
+
+const handleCountUp = (e) => {
+  setCount(count + 1)
+  console.log(count)
+}
+  return (
+    <div>
+      <h1>계산 결과 : {result}</h1>
+      <div></div>
+    </div>
+  );
+}
+export default App;
